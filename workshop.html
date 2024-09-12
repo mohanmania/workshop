@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #disp{
+        height: "600px";
+        width: "60px";
+        background-color: aqua;
+        font-size: 30px;
+        color: black;
+        
+
+    }
+</style>
+
+</head>
+<body>
+
+    <form>
+        <input type="text" id="search" >
+        <button id="butn"> serach</button>
+    </form>
+  <div id="disp"></div>
+    
+
+
+    <script>
+        let arr = [{mobile:"redmi"},{mobile:"iphone15"},{mobile:"samsung"},{}]
+
+    let search = document.getElementById("search");
+    // let userinput = search.tostring()
+    let butn = document.getElementById("butn")
+
+
+    butn.addEventListener("click",(e)=>{
+        e.preventDefault()
+
+        let searchitem = search.value.toLowerCase()
+           found = false
+        for(i=0;i<arr.length;i++){
+            for(key in arr[i])
+            if(arr[i][key].toLowerCase() ===  searchitem){
+                disp.innerHTML =`${arr[i][key]}`;
+                    found = true
+                    break;
+        //    console.log(arr[i])
+
+        }
+        else{
+            disp.innerHTML=`${searchitem} Not found`
+        }
+
+        }
+
+       
+
+
+
+
+    })
+    // let disp = document.getElementById(disp)
+    // for(i=0;i<arr.length;i++){
+    //     if(sreach == ""){
+    //     disp.innerHTML=arr.name
+
+    //     }
+
+    // }
+   
+    
+    
+    </script>
+
+</body>
+</html>
